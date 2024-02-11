@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deceptive Defender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="darkmode">
+    <header>
+        <h1>Deceptive Defender</h1>
+    </header>
+    <nav>
+        <ul>
+            <li class="tab active" onclick="openTab('home')">Home</li>
+            <li class="tab" onclick="openTab('patterns')">Patterns</li>
+        </ul>
+    </nav>
+    <section id="home" class="content">
+        <h2 class="pattern-title">Deceptive Defender Extension</h2>
+        <div class="pattern-description">
+            <p class="text">
+                Deceptive Defender is a modular framework for an extension, designed to identify and combat (e.g. highlight or neutralize) deceptive patterns on websites. 
+                It serves as a foundation for attaching a detector for detecting the pattern instances and a converter for choosing the countermeasure.
+            </p>
+            <a href="https://github.com/ViolaValery">GitHub link of the project</a>
+            <p>
+                This website serves as a testing module for the extensions functions. 
+            </p>
+        </div>
+        <h2 class="pattern-title">Deceptive Patterns (formerly Dark Patterns)</h2>
+        <div class="pattern-description">
+            <p>
+                Deceptive Patterns are designs that influence the decision making of the user. The user get's manipulated into taking actions, they wouldn't have taken if they were fully informed and confronted with a neutral design.
+            </p>
+            <a href="https://www.deceptive.design/">Brignulls Website</a>
+        </div>
+    </section>
+    <section id="patterns" class="content hidden">
+        <div class="pattern">
+            <h2 class="pattern-title">Confirmshaming</h2>
+            <div class="horizontal-container">
+                <div class="pattern-example">
+                    <p class="banner-text">Do you really want to miss the opportunity to save money?</p>
+                    <div class="horizontal-container" data-dec-def-id="confirmshaming">
+                        <button class="accept-button" data-dec-def-id="accept">No, I prefer to pay too much.</button>
+                        <button class="accept-button" data-dec-def-id="deny">Yes, I want to save money!</button>
+                    </div>
+                </div>
+                <div class="pattern-description">
+                    <p>Confirmshaming works by triggering uncomfortable emotions, such as guilt or shame, to influence users' decision-making. 
+                        Websites or apps employing this deceptive pattern often present users with opt-out button labels that are worded in a derogatory or belittling manner, 
+                        making users feel bad about choosing not to engage with the offered service or feature. 
+                        By targeting users' emotions and self-image, confirmshaming aims to increase the likelihood that users will give in to the desired action, ultimately benefiting the service provider.</p>
+                </div>
+            </div>
+        </div>        
+        <div class="pattern">
+            <h2 class="pattern-title">Low-stock Message</h2>
+            <div class="horizontal-container">
+                <div class="pattern-example">
+                    <img src="images/tshirt.webp" alt="Drippy Shirt" style="width: 300px;">
+                    <p>Elegant and stylish: Our white T-shirt with an exclusive abstract design is the perfect companion for any occasion. 
+                        Made from high-quality cotton, it offers a soft feel and a timeless look.</p>
+                    <p data-dec-def-id="lowStock"><strong>Only 3 items left in stock!</strong></p>
+                    <button class="accept-button">Buy Now</button>
+                </div>
+                <div class="pattern-description">
+                    <p>The Low-stock Message is a common practice intended to create a sense of urgency by suggesting that only a limited number of a product is available. This can lead to impulsive buying decisions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="pattern">
+            <h2 class="pattern-title">Visual Interference</h2>
+            <div class="horizontal-container">
+                <div class="pattern-example">
+                    <img src="images/shoe.webp" alt="Fresh Sneakers" style="width: 300px;">
+                    <p>Sleek and modern: Our fresh sneakers feature a cutting-edge design that sets the trend for casual footwear. 
+                        Crafted with premium materials, they provide unmatched comfort and a chic aesthetic for the fashion-forward individual.</p>
+                    <button class="accept-button" data-dec-def-id="visualInterference_accept">Buy Now</button>
+                    <button class="deny-button" data-dec-def-id="visualInterference_deny">Add to Cart</button>
+                </div>
+                <div class="pattern-description">
+                    <p>There are numerous ways to interfere with the visual design of a page to hide, obscure, or disguise information. 
+                        Visual perception can be manipulated by using small, low-contrast text. Comprehension can be manipulated by creating a chaotic or overwhelming interface. 
+                        Users' expectations can be violated by placing important information in styles or locations they would not expect.
+                        
+                        Click on the button to trigger a Cookie Banner integrating the design 'Visual Interference' and 'Confirmshaming'.
+                    </p>
+                    <div id="enable-cookie-banner" class="hidden"> 
+                        <button class="deny-button" onclick="toggleCookieBanner()">Trigger Cookie Banner</button>
+                    </div>               
+                </div>
+            </div>
+            <div class="horizontal-container">
+                
+            </div>
+        </div>
+    </section>
+
+    <div id="cookie-banner" class="hidden">
+        <p> We are supporting a local animal shelter with the venues of this website.
+            Do you want to support us by accepting the cookies?
+        </p>
+        <button id="accept-cookies" class="accept-button">Yes please!</button>
+        <button id="deny-cookies"class="deny-cookies">No, I hate cute animals.</button>
+    </div> 
+    <script src="script.js"></script>
+</body>
+</html>
