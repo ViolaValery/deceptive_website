@@ -1,16 +1,16 @@
 /* Global Variables for Colors */
 :root {
-    --background-color: #121212;
-    --text-color: #ffffff;
-    --header-background: #1c1c1c;
-    --nav-background: #333;
-    --pattern-background: #1e1e1e;
-    --pattern-description-background: #262626;
-    --cookie-banner-background: #333;
-    --button-deny-background: #555;
-    --button-accept-background: #4CAF50;
-    --tab-background: #000;
-    --tab-hover-background: #111;
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --header-background: #1c1c1c;
+  --nav-background: #333;
+  --pattern-background: #1e1e1e;
+  --pattern-description-background: #262626;
+  --cookie-banner-background: #333;
+  --button-deny-background: #555;
+  --button-accept-background: #4caf50;
+  --tab-background: #000;
+  --tab-hover-background: #111;
 }
 
 /* Light Mode Colors
@@ -30,173 +30,241 @@
 */
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    background: var(--header-background);
-    padding: 20px 0;
-    text-align: center;
+  background: var(--header-background);
+  padding: 20px 0;
+  text-align: center;
 }
 
 /* Main heading styles */
 h1 {
-    margin: 0;
-    color: var(--text-color);
+  margin: 0;
+  color: var(--text-color);
 }
 
 /* Navigation styles */
 nav ul {
-    list-style-type: none;
-    overflow: hidden;
-    background-color: var(--nav-background);
-    margin: 10px;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: var(--nav-background);
+  margin: 10px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    cursor: pointer;
-    flex: 1;
-    transition: background-color 0.3s; /* Smooth transition for highlighting */
-    color: var(--text-color);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  flex: 1;
+  transition: background-color 0.3s; /* Smooth transition for highlighting */
+  color: var(--text-color);
 }
 
 /* Active and hover tab styles */
-nav ul li.active, nav ul li:hover {
-    background-color: var(--tab-background); /* Use variable for active tab background */
+nav ul li.active,
+nav ul li:hover {
+  background-color: var(
+    --tab-background
+  ); /* Use variable for active tab background */
 }
 
 /* Hover background color for tabs */
 nav ul li:hover {
-    background-color: var(--tab-hover-background);
+  background-color: var(--tab-hover-background);
 }
 
 /* Content section styles */
 .content {
-    display: none; /* Initially hide all content sections */
-    padding: 20px;
-    min-height: 400px;
+  display: none; /* Initially hide all content sections */
+  padding: 20px;
+  min-height: 400px;
 }
 
 /* Display active content section */
 .content.active {
-    display: block;
+  display: block;
 }
 
 /* Pattern section styles */
 .pattern {
-    background-color: var(--pattern-background);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
+  background-color: var(--pattern-background);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 /* Pattern title styles */
 .pattern-title {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: var(--text-color);
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--text-color);
 }
 
 /* Flex container for pattern examples and descriptions */
-.horizontal-container, .vertical-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+.horizontal-container,
+.vertical-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 /* Stack vertically on smaller screens */
 .vertical-container {
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Pattern example and description container styles */
-.pattern-example, .pattern-description {
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    flex: 1;
+.pattern-example,
+.pattern-description {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  flex: 1;
 }
 
 /* Styles for the pattern example box */
 .pattern-example {
-    border: 2px solid white; /* Visible border for example box */
-    align-items: flex-start;
-    margin-right: 20px; /* Space between example and description */
+  border: 2px solid white; /* Visible border for example box */
+  align-items: flex-start;
+  margin-right: 20px; /* Space between example and description */
 }
 
 /* Pattern description text styles */
 .pattern-description {
-    background-color: var(--pattern-description-background);
-    color: var(--text-color);
+  background-color: var(--pattern-description-background);
+  color: var(--text-color);
 }
 
 /* Button styles for actions and hover effects */
-.deny-button, .accept-button, .trigger-cookie-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 300px;
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+.deny-button,
+.accept-button,
+.trigger-cookie-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 300px;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
 }
 
 /* Deny button styles */
 .deny-button {
-    background-color: var(--button-deny-background);
-    color: var(--text-color);
+  background-color: var(--button-deny-background);
+  color: var(--text-color);
 }
 
 /* Accept button styles */
 .accept-button {
-    background-color: var(--button-accept-background);
-    color: var(--text-color); /* Ensure text color is consistent */
+  background-color: var(--button-accept-background);
+  color: var(--text-color); /* Ensure text color is consistent */
 }
 
 /* Hover effect for buttons */
-.deny-button:hover, .accept-button:hover {
-    filter: brightness(85%); /* Slightly darken button on hover */
-    transform: translateY(-2px); /* Lift button effect */
+.deny-button:hover,
+.accept-button:hover {
+  filter: brightness(85%); /* Slightly darken button on hover */
+  transform: translateY(-2px); /* Lift button effect */
 }
 
 /* Cookie banner styles */
 #cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: var(--cookie-banner-background);
-    color: var(--text-color);
-    padding: 20px;
-    text-align: center;
-    display: none; /* Initially hidden */
-    z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--cookie-banner-background);
+  color: var(--text-color);
+  padding: 20px;
+  text-align: center;
+  display: none; /* Initially hidden */
+  z-index: 1000;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-    nav ul li {
-        padding: 10px 5px;
-    }
+  nav ul li {
+    padding: 10px 5px;
+  }
 
-    .horizontal-container, .vertical-container {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-    }
+  .horizontal-container,
+  .vertical-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
 
-    .pattern-example, .pattern-description {
-        margin-right: 0;
-    }
+  .pattern-example,
+  .pattern-description {
+    margin-right: 0;
+  }
+}
+
+/* Styles for testing */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-family: "Arial", sans-serif;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+.tooltip .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+}
+
+.red-border {
+    border: 2px solid red;
+    display: "inline-block";
+    padding: "5px";
 }
