@@ -6,28 +6,12 @@
   --nav-background: #333;
   --pattern-background: #1e1e1e;
   --pattern-description-background: #262626;
-  --cookie-banner-background: #333;
+  --cookie-banner-background: rgba(255, 255, 255, 0.825);
   --button-deny-background: #555;
   --button-accept-background: #4caf50;
   --tab-background: #000;
   --tab-hover-background: #111;
 }
-
-/* Light Mode Colors
-:root {
-    --background-color: #FFFCE8;
-    --text-color: #121212; 
-    --header-background: #9B9ECE; 
-    --nav-background: #f2f2f2; 
-    --pattern-background: #f2f2f2;
-    --pattern-description-background: #9B9ECE;
-    --button-deny-background: #f2f2f2;
-    --button-accept-background: #9B9ECE;
-    --cookie-banner-background: #f2f2f2; 
-    --tab-background: #dddddd;
-    --tab-hover-background: #cccccc;
-}
-*/
 
 body {
   background-color: var(--background-color);
@@ -114,36 +98,45 @@ nav ul li:hover {
 /* Flex container for pattern examples and descriptions */
 .horizontal-container,
 .vertical-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Stack vertically on smaller screens */
+/* Stack vertically */
 .vertical-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Stack horizontally */
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+  align-items: middle;
 }
 
 /* Pattern example and description container styles */
 .pattern-example,
 .pattern-description {
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   margin-bottom: 20px;
-  flex: 1;
 }
 
 /* Styles for the pattern example box */
 .pattern-example {
-  border: 2px solid white; /* Visible border for example box */
-  align-items: flex-start;
-  margin-right: 20px; /* Space between example and description */
+  border: 10px solid var(--background-color); /* Visible border for example box */
+  align-items: center;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-bottom: 60px;
 }
 
 /* Pattern description text styles */
 .pattern-description {
   background-color: var(--pattern-description-background);
+  align-items: center;
   color: var(--text-color);
 }
 
@@ -181,15 +174,20 @@ nav ul li:hover {
 }
 
 /* Cookie banner styles */
-#cookie-banner {
+#cookie-banner_uc,
+#cookie-banner_he,
+#cookie-banner_ll,
+#cookie-banner_s {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   background: var(--cookie-banner-background);
-  color: var(--text-color);
+  color: var(--background-color);
   padding: 20px;
   text-align: center;
+  font-size: larger;
+  font-weight: bolder;
   display: none; /* Initially hidden */
   z-index: 1000;
 }
@@ -200,15 +198,14 @@ nav ul li:hover {
     padding: 10px 5px;
   }
 
-  .horizontal-container,
-  .vertical-container {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+  .vertical-container{
+    flex-direction: row; /* Stack items vertically */
   }
 
-  .pattern-example,
-  .pattern-description {
-    margin-right: 0;
+  .horizontal-container{
+    flex-direction: column; /* Stack items horizontally */
   }
+
 }
 
 /* Styles for testing */
