@@ -21,19 +21,28 @@
         <div class="pattern-description">
             <p class="text">
                 Deceptive Defender is a modular framework for an extension, designed to identify and combat (e.g. highlight or neutralize) deceptive patterns on websites. 
-                It serves as a foundation for attaching a detector for detecting the pattern instances and a converter for choosing the countermeasure.
+                It provides two interfaces for the integration of a detection- as well as a countermeasuring module. These interfaces
+                enable the respective programmer to connect any detection algorithm that is based on html and css data of the website,
+                and to integrate a broad spectrum of counter measuring stategies.
             </p>
-            <a href="https://github.com/ViolaValery">GitHub link of the project</a>
+            <a class="text" href="https://hci.rwth-aachen.de/publications/schaefer2023c.pdf">Investigating Visual Countermeasures Against Dark Patterns in User Interfaces</a>
+            <p class="text">
+                The most promising visual countermeasures from Schäfer et. al's user study on
+                countermeasures are implemented exemplarily and testable on this website.
+            </p>
+            
             <p>
-                This website serves as a testing module for the extensions functions. 
+                
             </p>
+            <a class="text" href="https://github.com/ViolaValery">GitHub link of the project</a>
         </div>
         <h2 class="pattern-title">Deceptive Patterns (formerly Dark Patterns)</h2>
         <div class="pattern-description">
-            <p>
-                Deceptive Patterns are designs that influence the decision making of the user. The user get's manipulated into taking actions, they wouldn't have taken if they were fully informed and confronted with a neutral design.
+            <p class="text">
+                Deceptive Patterns (formerly Dark Patterns) aim at exploiting cognitive biases to manipulate user behaviour.
+                Harry Brignull was the first to define the term 'dark pattern' on his website:
             </p>
-            <a href="https://www.deceptive.design/">Brignulls Website</a>
+            <a class="text" href="https://www.deceptive.design/">Brignulls Website</a>
         </div>
     </section>
     <section id="patterns" class="content hidden">
@@ -44,17 +53,17 @@
                     <h3> Unchanged deceptive pattern </h3>
                     <div class="pattern-example">
                         <p class="banner-text">Do you really want to miss the opportunity to save money?</p>
-                        <div class="horizontal-container" data-dec-def-id="confirmshaming">
-                            <button class="accept-button" data-dec-def-id="confirmshaming_accept">No, I prefer to pay too much.</button>
-                            <button class="accept-button" data-dec-def-id="confirmshaming_deny">Yes, I want to save money!</button>
+                        <div class="horizontal-container">
+                            <button type="submit" class="accept-button">No, I prefer to pay too much.</button>
+                            <button type="submit" class="accept-button">Yes, I want to save money!</button>
                         </div>
                     </div>
                     <h3> Countermeasure Hightlight plus Explanation </h3>
                     <div class="pattern-example">
                         <p class="banner-text">Do you really want to miss the opportunity to save money?</p>
-                        <div class="horizontal-container" data-dec-def-id="confirmshaming">
-                            <button class="accept-button" data-dec-def-id="confirmshaming_accept">No, I prefer to pay too much.</button>
-                            <button class="accept-button" data-dec-def-id="confirmshaming_deny">Yes, I want to save money!</button>
+                        <div class="horizontal-container" data-dec-def-id="confirmshaming_he">
+                            <button type="submit" class="accept-button" data-dec-def-id="confirmshaming_accept_he">No, I prefer to pay too much.</button>
+                            <button type="submit" class="accept-button" data-dec-def-id="confirmshaming_deny_he">Yes, I want to save money!</button>
                         </div>
                     </div>
                 </div>
@@ -62,22 +71,36 @@
                     <h3> Countermeasure Low Light </h3>
                     <div class="pattern-example">
                         <p class="banner-text">Do you really want to miss the opportunity to save money?</p>
-                        <div class="horizontal-container" data-dec-def-id="confirmshaming">
-                            <button class="accept-button" data-dec-def-id="confirmshaming_accept">No, I prefer to pay too much.</button>
-                            <button class="accept-button" data-dec-def-id="confirmshaming_deny">Yes, I want to save money!</button>
+                        <div class="horizontal-container" data-dec-def-id="confirmshaming_ll">
+                            <button type="submit" class="accept-button" data-dec-def-id="confirmshaming_accept_ll">
+                                <span data-dec-def-id="span_deny_main">
+                                    No
+                                </span>
+                                <span data-dec-def-id="span_deny_rest">
+                                    , I prefer to pay too much.
+                                </span>
+                            </button>
+                            <button type="submit" class="accept-button" data-dec-def-id="confirmshaming_deny_ll">
+                                <span data-dec-def-id="span_accept_main">
+                                    Yes
+                                </span>
+                                <span data-dec-def-id="span_accept_rest">
+                                    , I want to save money!
+                                </span>
+                            </button>
                         </div>
                     </div>
                     <h3> Countermeasure Switch </h3>
                     <div class="pattern-example">
                         <p class="banner-text">Do you really want to miss the opportunity to save money?</p>
-                        <div class="horizontal-container" data-dec-def-id="confirmshaming">
-                            <button class="accept-button" data-dec-def-id="confirmshaming_accept">No, I prefer to pay too much.</button>
-                            <button class="accept-button" data-dec-def-id="confirmshaming_deny">Yes, I want to save money!</button>
+                        <div class="horizontal-container" data-dec-def-id="confirmshaming_s">
+                            <button type="submit" class="accept-button" data-dec-def-id="confirmshaming_deny_s">No, I prefer to pay too much.</button>
+                            <button type="submit" class="accept-button" data-dec-def-id="confirmshaming_accept_s">Yes, I want to save money!</button>
                         </div>
                     </div>
                 </div>
-            </div>        
-            <div class="pattern-description" >
+            </div>
+            <div class="pattern-description">
                 <p>Confirmshaming works by triggering uncomfortable emotions, such as guilt or shame, to influence users' decision-making. 
                     Websites or apps employing this deceptive pattern often present users with opt-out button labels that are worded in a derogatory or belittling manner, 
                     making users feel bad about choosing not to engage with the offered service or feature. 
@@ -94,8 +117,8 @@
                         <img src="images/tshirt.webp" alt="Drippy Shirt" style="width: 300px;">
                         <p flex-direction= "column" >White T-shirt with an exclusive abstract design </p>
                         <p flex-direction= "column" >Made from high-quality cotton, it offers a soft feel and a timeless look.</p>
-                        <p data-dec-def-id="lowStock">
-                            <strong data-dec-def-id="lowStock_text" style="width: 300px;">Only 3 items left in stock!</strong>
+                        <p data-dec-def-id="tooltip_test">
+                            <strong style="width: 300px;">Only 3 items left in stock!</strong>
                         </p>
                         <button class="accept-button">Buy Now</button>
                     </div>
@@ -105,8 +128,8 @@
                         <img src="images/tshirt.webp" alt="Drippy Shirt" style="width: 300px;">
                         <p flex-direction= "column" >White T-shirt with an exclusive abstract design </p>
                         <p flex-direction= "column" >Made from high-quality cotton, it offers a soft feel and a timeless look.</p>
-                        <p data-dec-def-id="lowStock">
-                            <strong data-dec-def-id="lowStock_text" style="width: 300px;">Only 3 items left in stock!</strong>
+                        <p data-dec-def-id="lowStock_he">
+                            <strong data-dec-def-id="lowStock_text_he" style="width: 300px;">Only 3 items left in stock!</strong>
                         </p>
                         <button class="accept-button">Buy Now</button>
                     </div>
@@ -117,8 +140,8 @@
                         <img src="images/tshirt.webp" alt="Drippy Shirt" style="width: 300px;">
                         <p flex-direction= "column" >White T-shirt with an exclusive abstract design </p>
                         <p flex-direction= "column" >Made from high-quality cotton, it offers a soft feel and a timeless look.</p>
-                        <p data-dec-def-id="lowStock">
-                            <strong data-dec-def-id="lowStock_text" style="width: 300px;">Only 3 items left in stock!</strong>
+                        <p data-dec-def-id="lowStock_ll">
+                            <strong data-dec-def-id="lowStock_text_ll" style="width: 300px;">Only 3 items left in stock!</strong>
                         </p>
                         <button class="accept-button">Buy Now</button>
                     </div>
@@ -127,8 +150,8 @@
                         <img src="images/tshirt.webp" alt="Drippy Shirt" style="width: 300px;">
                         <p flex-direction= "column" >White T-shirt with an exclusive abstract design </p>
                         <p flex-direction= "column" >Made from high-quality cotton, it offers a soft feel and a timeless look.</p>
-                        <p data-dec-def-id="lowStock">
-                            <strong data-dec-def-id="lowStock_text" style="width: 300px;">Only 3 items left in stock!</strong>
+                        <p data-dec-def-id="lowStock_s">
+                            <strong data-dec-def-id="lowStock_text_s" style="width: 300px;">Only 3 items left in stock!</strong>
                         </p>
                         <button class="accept-button">Buy Now</button>
                     </div>
@@ -143,38 +166,46 @@
             <div class="horizontal-container">
                 <div class="vertical-container">
                     <h3>Unchanged deceptive pattern</h3>
-                    <div class="pattern-example" data-dec-def-id="parent_div_visualInterference">
-                        <img src="images/shoe.webp" alt="Fresh Sneakers" style="width: 300px;">
+                    <div class="pattern-example">
+                        <img src="images/shoe.webp" alt="Fresh Sneakers" style="width: 400px;">
                         <p>Sleek and modern:</p>
                         <p>Our sneakers feature a cutting-edge design that sets the trend for footwear.</p>
-                        <button class="accept-button" data-dec-def-id="visualInterference_accept">Buy Now</button>
-                        <button class="deny-button" data-dec-def-id="visualInterference_deny">Add to Cart</button>
+                        <div class="horizontal-container">
+                            <button class="accept-button">Buy Now</button>
+                            <button class="deny-button">Add to Cart</button>
+                        </div>
                     </div>
                     <h3>Countermeasure Hightlight plus Explanation</h3>
                     <div class="pattern-example" data-dec-def-id="parent_div_visualInterference">
-                        <img src="images/shoe.webp" alt="Fresh Sneakers" style="width: 300px;">
+                        <img src="images/shoe.webp" alt="Fresh Sneakers" style="width: 400px;">
                         <p>Sleek and modern:</p>
                         <p>Our sneakers feature a cutting-edge design that sets the trend for footwear.</p>
-                        <button class="accept-button" data-dec-def-id="visualInterference_accept">Buy Now</button>
-                        <button class="deny-button" data-dec-def-id="visualInterference_deny">Add to Cart</button>
+                        <div data-dec-def-id="visualInterference_container_he" class="horizontal-container">
+                            <button class="accept-button" data-dec-def-id="visualInterference_accept_he">Buy Now</button>
+                            <button class="deny-button" data-dec-def-id="visualInterference_deny_he">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
                 <div class="vertical-container">
                     <h3>Countermeasure Low Light</h3>
                     <div class="pattern-example" data-dec-def-id="parent_div_visualInterference">
-                        <img src="images/shoe.webp" alt="Fresh Sneakers" style="width: 300px;">
+                        <img src="images/shoe.webp" alt="Fresh Sneakers" style="width: 400px;">
                         <p>Sleek and modern:</p>
                         <p>Our sneakers feature a cutting-edge design that sets the trend for footwear.</p>
-                        <button class="accept-button" data-dec-def-id="visualInterference_accept">Buy Now</button>
-                        <button class="deny-button" data-dec-def-id="visualInterference_deny">Add to Cart</button>
+                        <div data-dec-def-id="visualInterference_container_ll" class="horizontal-container">
+                            <button class="accept-button" data-dec-def-id="visualInterference_accept_ll">Buy Now</button>
+                            <button class="deny-button" data-dec-def-id="visualInterference_deny_ll">Add to Cart</button>
+                        </div>
                     </div>
                     <h3>Countermeasure Switch</h3>
                     <div class="pattern-example" data-dec-def-id="parent_div_visualInterference">
-                        <img src="images/shoe.webp" alt="Fresh Sneakers" style="width: 300px;">
+                        <img src="images/shoe.webp" alt="Fresh Sneakers" style="width: 400px;">
                         <p>Sleek and modern:</p>
                         <p>Our sneakers feature a cutting-edge design that sets the trend for footwear.</p>
-                        <button class="accept-button" data-dec-def-id="visualInterference_accept">Buy Now</button>
-                        <button class="deny-button" data-dec-def-id="visualInterference_deny">Add to Cart</button>
+                        <div data-dec-def-id="visualInterference_container_s" class="horizontal-container">
+                            <button class="accept-button" data-dec-def-id="visualInterference_accept_s">Buy Now</button>
+                            <button class="deny-button" data-dec-def-id="visualInterference_deny_s">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,58 +215,11 @@
                     <p>There are numerous ways to interfere with the visual design of a page to hide, obscure, or disguise information. 
                         Visual perception can be manipulated by using small, low-contrast text. Comprehension can be manipulated by creating a chaotic or overwhelming interface. 
                         Users' expectations can be violated by placing important information in styles or locations they would not expect.
-                    </p>                 
+                    </p>        
                 </div>                              
             </div>
         </div>
-        <div class="pattern">
-            <h2 class="pattern-title"> Cookie Banner - Visual Interference & Confirmshaming </h2>
-            <p class="pattern-description"> Click on the button to trigger a Cookie Banner integrating the design 'Visual Interference' and 'Confirmshaming'. </p>
-            <div class="horizontal-container">
-                <div id="enable-cookie-banner_uc" class="hidden" display="center"> 
-                    <button class="deny-button" display="center">Trigger Cookie Banner</button>
-                </div> 
-                <div id="enable-cookie-banner_he" class="hidden" display="center"> 
-                    <button class="deny-button" display="center">Trigger Cookie Banner</button>
-                </div> 
-                <div id="enable-cookie-banner_ll" class="hidden" display="center"> 
-                    <button class="deny-button" display="center">Trigger Cookie Banner</button>
-                </div> 
-                <div id="enable-cookie-banner_s" class="hidden" display="center"> 
-                    <button class="deny-button" display="center">Trigger Cookie Banner</button>
-                </div> 
-            </div>  
-        </div>
     </section>
-
-    <div id="cookie-banner_uc" class="hidden">
-        <p> We are supporting a local animal shelter with the venues of this website.
-            Do you want to support us by accepting the cookies?
-        </p>
-        <button id="accept-cookies_uc" class="accept-button">Yes please!</button>
-        <button id="deny-cookies_uc"class="deny-cookies">No, I hate cute animals.</button>
-    </div>
-    <div id="cookie-banner_he" class="hidden">
-        <p> We are supporting a local animal shelter with the venues of this website.
-            Do you want to support us by accepting the cookies?
-        </p>
-        <button id="accept-cookies_he" class="accept-button">Yes please!</button>
-        <button id="deny-cookies_he"class="deny-cookies">No, I hate cute animals.</button>
-    </div> 
-    <div id="cookie-banner_ll" class="hidden">
-        <p> We are supporting a local animal shelter with the venues of this website.
-            Do you want to support us by accepting the cookies?
-        </p>
-        <button id="accept-cookies_ll" class="accept-button">Yes please!</button>
-        <button id="deny-cookies_ll"class="deny-cookies">No, I hate cute animals.</button>
-    </div> 
-    <div id="cookie-banner_s" class="hidden">
-        <p> We are supporting a local animal shelter with the venues of this website.
-            Do you want to support us by accepting the cookies?
-        </p>
-        <button id="accept-cookies_s" class="accept-button">Yes please!</button>
-        <button id="deny-cookies_s"class="deny-cookies">No, I hate cute animals.</button>
-    </div>  
     <script src="script.js"></script>
 </body>
 </html>
